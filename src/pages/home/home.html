@@ -1,14 +1,43 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <img class="banner" src="assets/imgs/logo1.png">
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+    <img class="step" src="assets/imgs/Step1.png">
+
+    <br>
+
+    <img class="iconID" src="assets/imgs/IconID.png" width="100" height="90" class="center" >
+
+    <div text-center class="lineheight" >
+      <p class="head">Face photo on ID Card</p>
+      <p class="body">Upload only face photo on ID card from camera or photo library</p>
+       </div>
+
+       <br>
+       
+  <button ion-button (click)="takePhoto()"  color="pruLightRed" class="plt" icon-start>
+    <ion-icon name="camera"></ion-icon> 
+    Take Photo
+  </button>
+
+
+  <button ion-button (click)="getPhoto()" color="pruLightRed"  class="plt" icon-start >
+      <ion-icon name="images"></ion-icon> 
+    Photo Library
+  </button>
+
+  <p align="center">
+      <img class="sourceImage" src="{{ image }}" >
+    </p>
+
+
+  <button ion-button (click)="nextPage()"  color="pruLightRed" class="plt" icon-end *ngIf="status" >
+      Next
+      <ion-icon name="arrow-dropright"></ion-icon> 
+     </button>
+
 </ion-content>

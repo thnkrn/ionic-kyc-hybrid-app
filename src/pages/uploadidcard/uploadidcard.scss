@@ -1,13 +1,29 @@
+.Image{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .button.plt{
     margin-left: auto;
     margin-right: auto;
     display: block !important;
 };
 
+.banner{
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 40%;
+    height: 20%;
 }
 
 .head{
@@ -17,34 +33,20 @@
 }
 
 .body{
-    font-size: 13.6px;
+    font-size: 13.5px;
 }
 
 .div{
     line-height: 0.7;
 }
 
-.banner{
-    width: 60%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.step{
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.sourceImage{
-    width: 70%;
+.step {
+    width: 80%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 .lineheight{
-    line-height: 30%;
+    line-height: normal;
 }

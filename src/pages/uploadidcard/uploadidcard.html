@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <img class="banner" src="assets/imgs/logo1.png">
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <img class="step" src="assets/imgs/Step3.png">
+
+    <br>
+
+<img src="assets/imgs/IconFull.png" width="60" height="60" class="center" >
+
+<div text-center class="lineheight" >
+  <p class="head">ID Card</p>
+  <p class="body">Upload full picture of ID card from camera or photo library</p>
+   </div>
+
+  <br>
+
+  <button ion-button (click)="takePhoto()"  color="pruLightRed" class="plt" icon-start>
+    <ion-icon name="camera"></ion-icon> 
+    Take Photo
+  </button>
+
+  
+
+  <button ion-button (click)="getPhoto()" color="pruLightRed"  class="plt" icon-start >
+      <ion-icon name="images"></ion-icon> 
+    Photo Library
+  </button>
+
+  <p align="center">
+      <img class="Image" src="{{ image }}" >
+    </p>
+
+    <button ion-button (click)="fetchResult()" color="pruLightRed" class="plt"  icon-start *ngIf="statusCheck" >
+      <ion-icon name="git-compare"></ion-icon>
+        Verify ID card
+    </button>
+
+      <button ion-button (click)="nextPage()"  color="pruLightRed" class="plt" icon-end *ngIf="statusNext">
+          Next
+          <ion-icon name="arrow-dropright"></ion-icon> 
+         </button>
+
+</ion-content>

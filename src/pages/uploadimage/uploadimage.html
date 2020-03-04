@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+      <img class="banner" src="assets/imgs/logo1.png">
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+        <img class="step" src="assets/imgs/Step2.png">
+
+        <br>
+  
+    <img src="assets/imgs/IconPro.png" width="60" height="60" class="center" >
+
+    
+    <div text-center class="lineheight" >
+        <p class="head">Face Photo</p>
+        <p class="body">Upload your face photo from camera or photo library</p>
+         </div>
+
+         <br>
+ 
+    <button ion-button (click)="takePhoto()"  color="pruLightRed" class="plt" icon-start>
+        <ion-icon name="camera"></ion-icon> 
+        Take Photo
+      </button>
+    
+      
+    
+      <button ion-button (click)="getPhoto()" color="pruLightRed"  class="plt" icon-start >
+          <ion-icon name="images"></ion-icon> 
+        Photo Library
+      </button>
+
+      <p align="center">
+          <img class="targetImage" src="{{ image }}" >
+        </p>
+
+
+  <button ion-button (click)="compareFace()" color="pruLightRed" class="plt"  icon-start *ngIf="statusRek" >
+      <ion-icon name="git-compare"></ion-icon>
+      Verify Image
+    </button>
+
+    <button ion-button (click)="nextPage()"  color="pruLightRed" class="plt" icon-end *ngIf="statusNext">
+        Next
+        <ion-icon name="arrow-dropright"></ion-icon> 
+       </button>
+</ion-content>

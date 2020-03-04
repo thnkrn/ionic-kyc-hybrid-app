@@ -1,0 +1,77 @@
+<ion-header>
+
+  <ion-navbar>
+      <img class="banner" src="assets/imgs/logo1.png">
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+        <img class="step" src="assets/imgs/Step4.png">
+
+    <p class="head">ID card information</p>
+    
+  <form [formGroup]="userform">
+    <ion-item>
+      <ion-label floating> ID number </ion-label>
+      <ion-input formControlName="idnumber" type="text" maxlength="13" [(ngModel)]="defaultIDNo" onkeypress="return event.charCode>=48 && event.charCode<=57">  </ion-input>
+    </ion-item> 
+    <ion-item no-lines class="alert" *ngIf="idnumber.hasError('required') && idnumber.touched">
+        *ID number is required
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating> First name </ion-label>
+      <ion-input formControlName="firstname" type="text" maxlength="30"  [(ngModel)]="defaultName"  > </ion-input>
+    </ion-item>
+    <ion-item no-lines class="alert"  *ngIf="firstname.hasError('required') && firstname.touched">
+        *First name is required
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating> Middle name (Optional)</ion-label>
+      <ion-input formControlName="middlename" type="text" maxlength="30"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating> Last name </ion-label>
+      <ion-input formControlName="lastname" type="text" maxlength="30" [(ngModel)]="defaultSurname" ></ion-input>
+    </ion-item>
+    <ion-item no-lines class="alert"  *ngIf="lastname.hasError('required') && lastname.touched">
+        *Last name is required
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label floating> Laser ID </ion-label>
+        <ion-input formControlName="laserID" type="text" maxlength="12"  [(ngModel)]="defaultLaserID"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="alert" *ngIf="laserID.hasError('required') && laserID.touched">
+          *Laser ID is required
+      </ion-item>
+  
+
+  </form>
+
+ 
+  <ion-item>
+      <ion-label floating> Birthdate(Year/Month/Day) </ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="birthDate"></ion-datetime>
+  </ion-item>
+  
+
+
+  <button ion-button (click)="createUserDataJson()" color="pruLightRed" class="plt" icon-start> 
+      <ion-icon name="search"></ion-icon>
+    Check ID card
+  </button>
+  
+  <button ion-button (click)="nextPage()"  color="pruLightRed" class="plt" icon-end *ngIf="statusNext">
+      Next
+      <ion-icon name="arrow-dropright"></ion-icon> 
+     </button>
+
+</ion-content>
