@@ -63,7 +63,7 @@ export class IdcardformPage {
     this.defaultIDNo = this.global.id;
     this.defaultName = this.global.nameTH;
     this.defaultSurname = this.global.surnameTH;
-    this.defaultLaserID = "JC1058813930";
+    this.defaultLaserID = "JCxxxxx";
 }
    createForm(){
      this.userform = this.formbuilder.group ({
@@ -133,10 +133,7 @@ export class IdcardformPage {
        birth_date : this.dateYear + this.dateMonth + this.dateDay,
        laser_id : this.userData.laserID
      }
-
      
-     console.log(this.userDataJson);
-
     let loader = this.loadingCtrl.create({
       content: "Uploading..."
     });
@@ -154,12 +151,9 @@ export class IdcardformPage {
 
       loader.dismiss();
 
-      console.log(response.text());
-
       this.responseData = response.text();
       this.responseJson = JSON.parse(this.responseData);
       this.validData = this.responseJson.desc;
-      // this.valid = JSON.stringify(this.validData);
       this.valid = this.validData;
 
       this.global.IDvalid = this.valid;
@@ -167,9 +161,6 @@ export class IdcardformPage {
       if(this.responseData !== null ){
         this.statusNext = true;
       }
-
-      console.log(this.valid);
-      console.log(this.global.IDvalid);
    }, (err) => {
     console.log(err);
     alert("Error");
@@ -181,18 +172,6 @@ export class IdcardformPage {
    nextPage() {
 
     this.navCtrl.push(ResultPage);
-  }
-
-  /*
-   nextPage() {
-
-    if((this.responseData !== null) && this.global.similarity !==null){
-    this.navCtrl.push(ResultPage);
-    } else {
-      this.navCtrl.push(ResultfailPage);
-    }
-  }
-  */
   }
 
 
