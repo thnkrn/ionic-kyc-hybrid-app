@@ -140,20 +140,6 @@ export class UploadidcardPage {
       this.resultNameTH = this.resultJson.nameTH;
       this.resultSurnameTH = this.resultJson.surnameTH;
 
-      // console.log(this.resultID);
-      // console.log(this.resultGender);
-      // console.log(this.resultName);
-      // console.log(this.resultLastname);
-      // console.log(this.resultThainame);
-      // console.log(this.resultAge);
-      // console.log(this.resultDOB);
-      // console.log(this.resultAddress);
-
-      console.log(this.resultID);
-      console.log(this.resultNameTH);
-      console.log(this.resultSurnameTH);
-
-
       this.global.id = this.resultID;
       this.global.name = this.resultName;
       this.global.surname = this.resultLastname;
