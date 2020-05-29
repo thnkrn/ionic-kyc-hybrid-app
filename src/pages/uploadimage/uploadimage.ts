@@ -119,8 +119,6 @@ export class UploadimagePage {
 
       loader.dismiss();
 
-      console.log(response.text());
-
       this.searchData = response.text();
 
       this.similarityDataJson = JSON.parse(this.searchData);
@@ -132,8 +130,6 @@ export class UploadimagePage {
       this.faceMatches = this.similarityDataJson.FaceMatches;
 
       
-    console.log(this.similarity);
-
      this.global.similarity = this.similarity;
 
      this.global.facesnull = this.faceMatches;
